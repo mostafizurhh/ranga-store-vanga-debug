@@ -100,7 +100,7 @@ const updateTaxAndCharge = () => {
       setInnerText('delivery-charge', 30);
       setInnerText('total-tax', (priceConverted * 0.2).toFixed(2));
    }
-   else { setInnerText('delivery-charge', 20) }
+   else { setInnerText('delivery-charge', 20); }
 };
 
 //grandTotal update function
