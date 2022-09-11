@@ -67,7 +67,7 @@ const showProductDetailsInModal = (product_details) => {
 
 const getInputValue = (id) => {
    const element = document.getElementById(id).innerText;
-   const converted = parseInt(element);
+   const converted = parseFloat(element);
    return converted;
 };
 
@@ -90,15 +90,15 @@ const updateTaxAndCharge = () => {
    const priceConverted = getInputValue('price');
    if (priceConverted > 500) {
       setInnerText('delivery-charge', 60);
-      setInnerText('total-tax', priceConverted * 0.4);
+      setInnerText('total-tax', (priceConverted * 0.2).toFixed(2));
    }
    else if (priceConverted > 400) {
       setInnerText('delivery-charge', 50);
-      setInnerText('total-tax', priceConverted * 0.3);
+      setInnerText('total-tax', (priceConverted * 0.2).toFixed(2));
    }
    else if (priceConverted > 200) {
       setInnerText('delivery-charge', 30);
-      setInnerText('total-tax', priceConverted * 0.2);
+      setInnerText('total-tax', (priceConverted * 0.2).toFixed(2));
    }
 };
 
