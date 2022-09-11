@@ -44,15 +44,15 @@ let count = 0;
 
 const addToCart = (id, price) => {
    count = count + 1;
-   updatePrice('price', value);
+   updatePrice('price', price);
 
    updateTaxAndCharge();
    document.getElementById('total-Products').innerText = count;
 };
 
-const showProductDetails = (product_id) => {
-   console.log(product_id);
-   fetch(`https://fakestoreapi.com/products/${product_id}`)
+const showProductDetails = (productId) => {
+   console.log(productId);
+   fetch(`https://fakestoreapi.com/products/${productId}`)
       .then((res) => res.json())
       .then((data) => showProductDetailsInModal(data));
 };
@@ -81,7 +81,8 @@ const updatePrice = (id, value) => {
 
 // set innerText function
 const setInnerText = (id, value) => {
-   document.getElementById(id).innerText = Math.round(value);
+   if (value === "number") { Math.round(value) }
+   document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
