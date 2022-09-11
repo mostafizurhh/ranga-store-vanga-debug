@@ -121,4 +121,24 @@ document.getElementById("search-btn").addEventListener("click", function () {
    showProducts(searchedProduct);
 });
 
+// trigger search field by pressing enter
+document.getElementById('input-value').addEventListener('keyup', function (event) {
+   if (event.key == 'Enter') {
+      const inputField = document.getElementById("input-value").value;
+      const searchedProduct = arr[0].filter((p) =>
+         p.category.startsWith(`${inputField}`)
+      );
+      showProducts(searchedProduct);
+   }
+})
+
+// search by title name
+// document.getElementById("search-btn").addEventListener("click", function () {
+//    const inputField = document.getElementById("input-value").value;
+//    const searchedProduct = arr[0].filter((p) =>
+//       p.title.toLowerCase().includes(inputField.toLowerCase())
+//    );
+//    showProducts(searchedProduct);
+// });
+
 
